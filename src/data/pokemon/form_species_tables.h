@@ -320,7 +320,7 @@ static const u16 sSneaselFormSpeciesIdTable[] = {
     SPECIES_SNEASEL_HISUIAN,
     FORM_SPECIES_END,
 };
-
+#endif
 static const u16 sUnownFormSpeciesIdTable[] = {
     SPECIES_UNOWN,
     SPECIES_UNOWN_B,
