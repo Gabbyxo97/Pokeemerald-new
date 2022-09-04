@@ -66,11 +66,8 @@ enum
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
-<<<<<<< HEAD
     MENU_ACTION_DEBUG,
-=======
     MENU_ACTION_QUEST_MENU,
->>>>>>> 2ee6a3e8a7070ef017def323e86dad73bb75b85e
 };
 
 // Save status
@@ -111,11 +108,8 @@ static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
-<<<<<<< HEAD
 static bool8 StartMenuDebugCallback(void);
-=======
 static bool8 QuestMenuCallback(void);
->>>>>>> 2ee6a3e8a7070ef017def323e86dad73bb75b85e
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
