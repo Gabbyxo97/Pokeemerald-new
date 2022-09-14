@@ -1488,18 +1488,18 @@ static void SortSecretBasesByRegistryStatus(void)
     struct SecretBase *secretBases;
 
     secretBases = gSaveBlock1Ptr->secretBases;
-    for (i = 1; i < SECRET_BASES_COUNT - 1; i++)
-    {
-        for (j = i + 1; j < SECRET_BASES_COUNT; j++)
-        {
-            if ((secretBases[i].registryStatus == UNREGISTERED && secretBases[j].registryStatus == REGISTERED)
-             || (secretBases[i].registryStatus == NEW && secretBases[j].registryStatus != NEW))
-            {
-                struct SecretBase temp;
-                SWAP(secretBases[i], secretBases[j], temp)
-            }
-        }
-    }
+    // for (i = 1; i < SECRET_BASES_COUNT - 1; i++)
+    // {
+    //     for (j = i + 1; j < SECRET_BASES_COUNT; j++)
+    //     {
+    //         if ((secretBases[i].registryStatus == UNREGISTERED && secretBases[j].registryStatus == REGISTERED)
+    //          || (secretBases[i].registryStatus == NEW && secretBases[j].registryStatus != NEW))
+    //         {
+    //             struct SecretBase temp;
+    //             SWAP(secretBases[i], secretBases[j], temp)
+    //         }
+    //     }
+    // }
 }
 
 // Used to save a record mixing friends' bases other than their own
@@ -1762,41 +1762,41 @@ void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
 
         SaveRecordMixBases(mixers);
 
-        for (i = 1; i < SECRET_BASES_COUNT; i++)
-        {
-            // In the process of deleting duplicate bases, if a base the player has registered is deleted it is
-            // flagged with the temporary toRegister flag, so it can be re-registered after it has been newly saved
-            if (gSaveBlock1Ptr->secretBases[i].toRegister == TRUE)
-            {
-                gSaveBlock1Ptr->secretBases[i].registryStatus = REGISTERED;
-                gSaveBlock1Ptr->secretBases[i].toRegister = FALSE;
-            }
-        }
+        // for (i = 1; i < SECRET_BASES_COUNT; i++)
+        // {
+        //     // In the process of deleting duplicate bases, if a base the player has registered is deleted it is
+        //     // flagged with the temporary toRegister flag, so it can be re-registered after it has been newly saved
+        //     if (gSaveBlock1Ptr->secretBases[i].toRegister == TRUE)
+        //     {
+        //         gSaveBlock1Ptr->secretBases[i].registryStatus = REGISTERED;
+        //         gSaveBlock1Ptr->secretBases[i].toRegister = FALSE;
+        //     }
+        // }
 
         SortSecretBasesByRegistryStatus();
-        for (i = 1; i < SECRET_BASES_COUNT; i++)
-        {
-            // Unmark "new" bases, they've been saved now and are no longer important
-            if (gSaveBlock1Ptr->secretBases[i].registryStatus == NEW)
-                gSaveBlock1Ptr->secretBases[i].registryStatus = UNREGISTERED;
-        }
+        // for (i = 1; i < SECRET_BASES_COUNT; i++)
+        // {
+        //     // Unmark "new" bases, they've been saved now and are no longer important
+        //     if (gSaveBlock1Ptr->secretBases[i].registryStatus == NEW)
+        //         gSaveBlock1Ptr->secretBases[i].registryStatus = UNREGISTERED;
+        // }
 
-        if (gSaveBlock1Ptr->secretBases[0].secretBaseId != 0
-         && gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived != 0xFFFF)
-        {
-            gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived++;
-        }
+        // if (gSaveBlock1Ptr->secretBases[0].secretBaseId != 0
+        //  && gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived != 0xFFFF)
+        // {
+        //     gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived++;
+        // }
     }
 }
 
 void ClearJapaneseSecretBases(struct SecretBase *bases)
 {
     u32 i;
-    for (i = 0; i < SECRET_BASES_COUNT; i++)
-    {
-        if (bases[i].language == LANGUAGE_JAPANESE)
-            ClearSecretBase(&bases[i]);
-    }
+    // for (i = 0; i < SECRET_BASES_COUNT; i++)
+    // {
+    //     if (bases[i].language == LANGUAGE_JAPANESE)
+    //         ClearSecretBase(&bases[i]);
+    // }
 }
 
 void InitSecretBaseVars(void)

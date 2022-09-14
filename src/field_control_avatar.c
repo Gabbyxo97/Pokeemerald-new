@@ -3,6 +3,7 @@
 #include "bike.h"
 #include "coord_event_weather.h"
 #include "daycare.h"
+#include "debug.h"
 #include "faraway_island.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -10,7 +11,6 @@
 #include "fieldmap.h"
 #include "field_control_avatar.h"
 #include "field_player_avatar.h"
-#include "field_poison.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "fldeff_misc.h"
@@ -30,7 +30,6 @@
 #include "wild_encounter.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
-#include "constants/field_poison.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
@@ -67,7 +66,6 @@ static bool8 TryStartWarpEventScript(struct MapPosition *, u16);
 static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
-static bool8 UpdatePoisonStepCounter(void);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -129,6 +127,37 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
+
+    //DEBUG
+    #ifdef TX_DEBUGGING
+        if (!TX_DEBUG_MENU_OPTION)
+        {
+            if (heldKeys & R_BUTTON) 
+            {
+                if(input->pressedSelectButton)
+                {
+                    input->input_field_1_0 = TRUE;
+                    input->pressedSelectButton = FALSE;
+                }else if(input->pressedStartButton) 
+                {
+                    input->input_field_1_2 = TRUE;
+                    input->pressedStartButton = FALSE;
+                }
+            }
+            if (heldKeys & L_BUTTON) 
+            {
+                if(input->pressedSelectButton)
+                {
+                    input->input_field_1_1 = TRUE;
+                    input->pressedSelectButton = FALSE;
+                }else if(input->pressedStartButton) 
+                {
+                    input->input_field_1_3 = TRUE;
+                    input->pressedStartButton = FALSE;
+                }
+            }
+        }
+    #endif
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -187,6 +216,18 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     }
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
+
+    #ifdef TX_DEBUGGING
+        if (!TX_DEBUG_MENU_OPTION)
+        {
+            if (input->input_field_1_2)
+            {
+                PlaySE(SE_WIN_OPEN);
+                Debug_ShowMainMenu();
+                return TRUE;
+            }
+        }
+    #endif
 
     return FALSE;
 }
@@ -546,11 +587,6 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
-        if (UpdatePoisonStepCounter() == TRUE)
-        {
-            ScriptContext_SetupScript(EventScript_FieldPoison);
-            return TRUE;
-        }
         if (ShouldEggHatch())
         {
             IncrementGameStat(GAME_STAT_HATCHED_EGGS);
@@ -635,31 +671,6 @@ void ClearPoisonStepCounter(void)
     VarSet(VAR_POISON_STEP_COUNTER, 0);
 }
 
-static bool8 UpdatePoisonStepCounter(void)
-{
-    u16 *ptr;
-
-    if (gMapHeader.mapType != MAP_TYPE_SECRET_BASE)
-    {
-        ptr = GetVarPointer(VAR_POISON_STEP_COUNTER);
-        (*ptr)++;
-        (*ptr) %= 4;
-        if (*ptr == 0)
-        {
-            switch (DoPoisonFieldEffect())
-            {
-            case FLDPSN_NONE:
-                return FALSE;
-            case FLDPSN_PSN:
-                return FALSE;
-            case FLDPSN_FNT:
-                return TRUE;
-            }
-        }
-    }
-    return FALSE;
-}
-
 void RestartWildEncounterImmunitySteps(void)
 {
     // Starts at 0 and counts up to 4 steps.
@@ -668,6 +679,11 @@ void RestartWildEncounterImmunitySteps(void)
 
 static bool8 CheckStandardWildEncounter(u16 metatileBehavior)
 {
+    #ifdef TX_DEBUGGING
+    if (FlagGet(FLAG_SYS_NO_ENCOUNTER)) //DEBUG
+        return FALSE;//
+    #endif
+
     if (sWildEncounterImmunitySteps < 4)
     {
         sWildEncounterImmunitySteps++;
@@ -683,7 +699,7 @@ static bool8 CheckStandardWildEncounter(u16 metatileBehavior)
     }
 
     sPreviousPlayerMetatileBehavior = metatileBehavior;
-    return FALSE;
+    return FALSE;   
 }
 
 static bool8 TryArrowWarp(struct MapPosition *position, u16 metatileBehavior, u8 direction)

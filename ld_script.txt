@@ -105,6 +105,7 @@ SECTIONS {
         src/random.o(.text);
         src/util.o(.text);
         src/daycare.o(.text);
+        src/debug.o(.text);
         src/egg_hatch.o(.text);
         src/battle_interface.o(.text);
         src/battle_anim_smokescreen.o(.text);
@@ -177,7 +178,6 @@ SECTIONS {
         src/tv.o(.text);
         src/contest_util.o(.text);
         src/script_pokemon_util.o(.text);
-        src/field_poison.o(.text);
         src/pokemon_size_record.o(.text);
         src/fldeff_misc.o(.text);
         src/field_special_scene.o(.text);
@@ -342,6 +342,8 @@ SECTIONS {
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
+        src/quests.o(.text);
+
     } =0
 
     script_data :
@@ -495,6 +497,7 @@ SECTIONS {
         src/trig.o(.rodata);
         src/util.o(.rodata);
         src/daycare.o(.rodata);
+        src/debug.o(.rodata);
         src/egg_hatch.o(.rodata);
         src/battle_gfx_sfx_util.o(.rodata);
         src/battle_interface.o(.rodata);
@@ -708,6 +711,7 @@ SECTIONS {
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
         src/pokemon_debug.o(.rodata);
+        src/quests.o(.rodata);
     } =0
 
     song_data :
