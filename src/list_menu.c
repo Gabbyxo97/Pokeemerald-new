@@ -12,6 +12,7 @@
 #include "strings.h"
 #include "sound.h"
 #include "constants/songs.h"
+#include "load_save.h"
 
 struct UnkIndicatorsStruct
 {
@@ -423,7 +424,7 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
     }
     else if (JOY_REPEAT(DPAD_UP))
     {
-        if (currentPosition == 0)
+        if (currentPosition == 0 && gSaveBlock2Ptr->optionsDisableListWrapping == FALSE)
             ListMenuChangeSelection(list,TRUE,lastPositon,TRUE);
         else
             ListMenuChangeSelection(list, TRUE, 1, FALSE);
@@ -432,7 +433,7 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
     }
     else if (JOY_REPEAT(DPAD_DOWN))
     {
-        if (currentPosition == lastPositon)
+        if (currentPosition == lastPositon && gSaveBlock2Ptr->optionsDisableListWrapping == FALSE)
             ListMenuChangeSelection(list,TRUE,lastPositon, FALSE);
         else
             ListMenuChangeSelection(list, TRUE, 1, TRUE);
