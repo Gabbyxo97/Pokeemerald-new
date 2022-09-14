@@ -7810,7 +7810,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 150,
         .importance = 1,
     },
 
@@ -7823,7 +7822,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 80,
         .importance = 1,
     },
 
@@ -7836,7 +7834,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 60,
         .importance = 1,
     },
 
@@ -7849,7 +7846,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7862,7 +7858,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7875,7 +7870,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7888,7 +7882,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7901,7 +7894,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7914,11 +7906,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flingPower = 25,
-        #else
-            .flingPower = 10,
-        #endif
         .importance = 1,
     },
 
@@ -7931,11 +7918,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 60,
-        #else
-            .flingPower = 10,
-        #endif
         .importance = 1,
     },
 
@@ -7948,7 +7930,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7961,7 +7942,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -7974,11 +7954,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 90,
-        #else
-            .flingPower = 95,
-        #endif
         .importance = 1,
     },
 
@@ -7991,11 +7966,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 110,
-        #else
-            .flingPower = 120,
-        #endif
         .importance = 1,
     },
 
@@ -8008,7 +7978,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 150,
         .importance = 1,
     },
 
@@ -8021,7 +7990,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8034,7 +8002,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8047,7 +8014,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8060,11 +8026,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flingPower = 75,
-        #else
-            .flingPower = 60,
-        #endif
         .importance = 1,
     },
 
@@ -8077,7 +8038,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8090,7 +8050,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8103,7 +8062,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 120,
         .importance = 1,
     },
 
@@ -8116,7 +8074,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 100,
         .importance = 1,
     },
 
@@ -8129,11 +8086,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 90,
-        #else
-            .flingPower = 95,
-        #endif
         .importance = 1,
     },
 
@@ -8146,11 +8098,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 110,
-        #else
-            .flingPower = 120,
-        #endif
         .importance = 1,
     },
 
@@ -8163,7 +8110,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 100,
         .importance = 1,
     },
 
@@ -8176,7 +8122,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8189,11 +8134,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flingPower = 80,
-        #else
-            .flingPower = 60,
-        #endif
         .importance = 1,
     },
 
@@ -8206,7 +8146,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 90,
         .importance = 1,
     },
 
@@ -8219,7 +8158,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 80,
         .importance = 1,
     },
 
@@ -8232,7 +8170,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 75,
         .importance = 1,
     },
 
@@ -8245,7 +8182,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8258,7 +8194,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8271,7 +8206,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 60,
         .importance = 1,
     },
 
@@ -8284,11 +8218,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 90,
-        #else
-            .flingPower = 95,
-        #endif
         .importance = 1,
     },
 
@@ -8301,7 +8230,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 90,
         .importance = 1,
     },
 
@@ -8314,7 +8242,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8327,11 +8254,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 110,
-        #else
-            .flingPower = 120,
-        #endif
         .importance = 1,
     },
 
@@ -8344,11 +8266,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 60,
-        #else
-            .flingPower = 50,
-        #endif
         .importance = 1,
     },
 
@@ -8361,7 +8278,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 60,
         .importance = 1,
     },
 
@@ -8374,7 +8290,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8387,7 +8302,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8400,7 +8314,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 70,
         .importance = 1,
     },
 
@@ -8413,7 +8326,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8426,7 +8338,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8439,11 +8350,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 60,
-        #else
-            .flingPower = 40,
-        #endif
         .importance = 1,
     },
 
@@ -8456,7 +8362,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 70,
         .importance = 1,
     },
 
@@ -8469,7 +8374,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8482,7 +8386,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
         .importance = 1,
     },
 
@@ -8495,11 +8398,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 130,
-        #else
-            .flingPower = 140,
-        #endif
         .importance = 1,
     },
 
@@ -9113,7 +9011,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 50,
     },
 
     [ITEM_HM02_FLY] =
@@ -9126,11 +9023,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flingPower = 90,
-        #else
-            .flingPower = 70,
-        #endif
     },
 
     [ITEM_HM03_SURF] =
@@ -9143,11 +9035,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flingPower = 90,
-        #else
-            .flingPower = 95,
-        #endif
     },
 
     [ITEM_HM04_STRENGTH] =
@@ -9160,7 +9047,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 80,
     },
 
     [ITEM_HM05_FLASH] =
@@ -9173,7 +9059,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 10,
     },
 
     [ITEM_HM06_ROCK_SMASH] =
@@ -9186,11 +9071,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flingPower = 20,
-        #else
-            .flingPower = 40,
-        #endif
     },
 
     [ITEM_HM07_WATERFALL] =
@@ -9203,7 +9083,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .flingPower = 80,
     },
 
     [ITEM_HM08_DIVE] =
@@ -9216,11 +9095,6 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flingPower = 80,
-        #else
-            .flingPower = 60,
-        #endif
     },
 
 
