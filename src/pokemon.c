@@ -8421,3 +8421,23 @@ void TryToSetBattleFormChangeMoves(struct Pokemon *mon)
         }
     }
 }
+
+u8 GetHiddenPowerType(u8 hpIV, u8 attackIV, u8 defenseIV, u8 speedIV, u8 spAttackIV, u8 spDefenseIV)
+{
+    u8 hpType;
+    u8 typeBits  = ((hpIV & 1) << 0)
+                    | ((attackIV & 1) << 1)
+                    | ((defenseIV & 1) << 2)
+                    | ((speedIV & 1) << 3)
+                    | ((spAttackIV & 1) << 4)
+                    | ((spDefenseIV & 1) << 5);
+
+    // Subtract 4 instead of 1 below because 3 types are excluded (TYPE_NORMAL and TYPE_MYSTERY and TYPE_FAIRY)
+    // The final + 1 skips past Normal, and the following conditional skips TYPE_MYSTERY
+    hpType = ((NUMBER_OF_MON_TYPES - 4) * typeBits) / 63 + 1;
+    if (hpType >= TYPE_MYSTERY)
+        hpType++;
+    hpType |= F_DYNAMIC_TYPE_1 | F_DYNAMIC_TYPE_2;
+
+    return hpType;
+}

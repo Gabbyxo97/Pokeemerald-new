@@ -4016,11 +4016,31 @@ static void SetMonTypeIcons(void)
 static void SetMoveTypeIcons(void)
 {
     u8 i;
+    u8 type;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
-            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+        {
+            switch(summary->moves[i])
+            {
+                case MOVE_HIDDEN_POWER:
+                    type = GetHiddenPowerType(
+                        GetMonData(mon, MON_DATA_HP_IV),
+                        GetMonData(mon, MON_DATA_ATK_IV),
+                        GetMonData(mon, MON_DATA_DEF_IV),
+                        GetMonData(mon, MON_DATA_SPEED_IV),
+                        GetMonData(mon, MON_DATA_SPATK_IV),
+                        GetMonData(mon, MON_DATA_SPDEF_IV)
+                    );
+                    SetTypeSpritePosAndPal(type & 0x3F, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+                    break;
+                default:
+                    SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+                    break;
+            }
+        }
         else
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
     }
@@ -4041,6 +4061,10 @@ static void SetContestMoveTypeIcons(void)
 
 static void SetNewMoveTypeIcon(void)
 {
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u8 type;
+
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
         SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 4, TRUE);
@@ -4048,9 +4072,29 @@ static void SetNewMoveTypeIcon(void)
     else
     {
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+        {
+            switch(sMonSummaryScreen->newMove)
+            {
+                case MOVE_HIDDEN_POWER:
+                    type = GetHiddenPowerType(
+                        GetMonData(mon, MON_DATA_HP_IV),
+                        GetMonData(mon, MON_DATA_ATK_IV),
+                        GetMonData(mon, MON_DATA_DEF_IV),
+                        GetMonData(mon, MON_DATA_SPEED_IV),
+                        GetMonData(mon, MON_DATA_SPATK_IV),
+                        GetMonData(mon, MON_DATA_SPDEF_IV)
+                    );
+                    SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+                    break;
+                default:
+                    SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+                    break;
+            }
+        }
         else
+        {
             SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gContestMoves[sMonSummaryScreen->newMove].contestCategory, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+        }
     }
 }
 

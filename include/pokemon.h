@@ -564,5 +564,6 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 bool32 ShouldShowFemaleDifferences(u16 species, u32 personality);
 void TryToSetBattleFormChangeMoves(struct Pokemon *mon);
+u8 GetHiddenPowerType(u8 hpIV, u8 attackIV, u8 defenseIV, u8 speedIV, u8 spAttackIV, u8 spDefenseIV);
 
 #endif // GUARD_POKEMON_H
