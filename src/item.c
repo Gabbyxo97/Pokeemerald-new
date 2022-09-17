@@ -1160,5 +1160,4 @@ static void DestroyItemIconSprite(void)
         FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId2]);
         DestroySprite(&gSprites[sItemIconSpriteId2]);
     }
->>>>>>> b8b2694428fc4ec6c8dba18cc722b40e1587bd67
 }
